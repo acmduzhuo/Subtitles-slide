@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><!-- 网页所有内容 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字幕划入</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 通配符 选择到页面所有标签 */
+        .text-slide{
+            width: 680px;
+            /* height: 800px; */
+            margin: 100px auto;
+            /* 上下 左右 */
+            background-color: #000;
+            overflow: hidden;
+        }
+        .text-slide .con{
+            float: left;
+            /* 浮动 左浮动 导致父级元素塌陷*/
+            width: 300px;
+            height: 200px;
+            margin: 18px;
+            border: 2px solid #fff;
+            /* background-color: #fff; */
+            background-image: url(img/1.jpg);
+            background-size: cover;
+            /* 背景图片大小 */
+        }
+        .con h2{
+            margin-top: 20px;
+            padding: 10px;
+            /* 内边距 由外到内挤压内部元素*/
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+
+            transform: translateY(-100px);
+            transition: transform 0.6s;
+        }
+        .con:hover h2{
+            transform: translateY(0);
+        }
+        .con p{
+            padding: 10px 20px;
+            /* 上下 左右 */
+            font-size: 12px;
+            line-height: 20px;
+            color: #fff;
+            opacity: 0;
+            /* 透明度看不见 */
+            transform: translateY(100px);
+            transition: all 0.6s;
+        }
+        .con:hover p{
+            transform: translateY(0);
+            opacity: 1;
+            transition-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-slide">
+        <div class="con">
+            <h2>少年的你</h2>
+            <p>
+                电脑端QQ暂无方法，大致操作就是在授权界面新建用户信息，让自己换一个昵称换一个头像。双击此文字快速了解详情见长图
+            </p>
+        </div>
+        <div class="con"></div>
+        <div class="con"></div>
+        <div class="con"></div>
+    </div>
+</body>
+</html>
